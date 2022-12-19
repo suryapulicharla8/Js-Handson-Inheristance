@@ -1,0 +1,12 @@
+p {
+    color:gold;
+    background-color: black;
+}
+pre {
+    color:darkgreen;
+    background-color: beige;
+    
+}
+pre:hover {
+    transform: translateX(50px);
+}

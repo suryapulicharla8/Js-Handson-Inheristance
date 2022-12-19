@@ -5,11 +5,65 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inheritance</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
    <p>1.Create 2 objects - parent and child. Attach methods to parent and use those methods in child object using parents prototype</p>
+            <pre>const parent={
+                firstName:'surya',
+                lastName:'pulicharla',
+                fullName(){
+                    return (this.firstName+" "+this.lastName)
+                }
+            }
+            const child={
+                __proto__:parent
+            }
+            console.log(child.fullName());
+            </pre>
    <p>2.Write code to explain prototype chaining</p> 
+   <pre> const o={
+    a:1,
+    b:2,
+    __proto__:{
+        b:3,
+        c:4,
+        __proto__:{
+            d:5,
+        }
+    }
+}
+console.log(o.d)
+</pre>
+
    <p>3.Add a method to calculate sum of all elements in Array in array's protype, use that method to calculate sum for multiple arrays</p>
+        <pre>arr=[1,2,3,4,5,6,7];
+            arr1=[2,3,4,5,6,7,8];
+            arr2=[4,5,6,7,7,8,9]
+            const arrySum={
+                addAll:function(arr){
+                    let sum=0;
+                    for(let i=0;i<arr.length;i++){
+                        sum=sum+arr[i]
+                    }
+                    console.log(sum)
+                }
+            }
+            Array.__proto__=arrySum;
+            Array.addAll(arr)
+            Array.addAll(arr1);
+            Array.addAll(arr2);
+        </pre>
    <p>4.Write a JavaScript function to retrieve all the names of object's own and inherited properties.</p>
+   <pre>
+
+    const obj1={
+        a:1,
+        b:2,
+        c:c,
+    }
+    console.log(obj1.getOwnProperNames(obj1));
+
+   </pre>
 </body>
 </html>
